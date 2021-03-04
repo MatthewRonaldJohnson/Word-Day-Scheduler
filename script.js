@@ -1,12 +1,9 @@
 var $container = $('.container');
-//var buisnessHours = ["8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"]
-//var savedData =  JSON.parse(localStorage.getItem("savedData")) || [] // called from local storage or blank array if nothing saved
-
 //grabs saved schedule from local storage, or creates a new empty schedule
 var schedule = JSON.parse(localStorage.getItem('savedSchedule')) || [
     {
         time: "8am",
-        milTime: '8',
+        milTime: 8,
         appointment: "",
     },
     {
@@ -21,47 +18,42 @@ var schedule = JSON.parse(localStorage.getItem('savedSchedule')) || [
     },
     {
         time: "11am",
+        milTime: 11,
         appointment: "",
     },
     {
         time: "12pm",
+        milTime: 12,
         appointment: "",
     },
     {
         time: "1pm",
+        milTime: 13,
         appointment: "",
     },
     {
         time: "2pm",
+        milTime: 14,
         appointment: "",
     },
     {
         time: "3pm",
+        milTime: 15,
         appointment: "",
     },
     {
         time: "4pm",
+        milTime: 16,
         appointment: "",
     },
     {
         time: "5pm",
+        milTime: 17,
         appointment: "",
     }
 ]
 
-// schedule.forEach(function(i){
-//     var newRow = $('<div>').addClass('row');
-//     $container.append(newRow);
-//     newRow.append($("<div>").addClass('hour col').text(i.time));
-//     var newText = i.appointment;
-//     if (newText === undefined){
-//         newText = ""
-//     };
-//     newRow.append($("<input>").addClass('time-block col-9').attr('type', 'text').attr("value", newText));
-//     newRow.append($("<button>").addClass('saveBtn col').text("💾"));
-// })
-
-
+$("#currentDay").text(moment().format('dddd, MMMM Do, YYYY'))
 //populates rows
 for (let i = 0; i < schedule.length; i++) {
     var timeIs;
@@ -69,9 +61,7 @@ for (let i = 0; i < schedule.length; i++) {
     $container.append(newRow);
     newRow.append($("<div>").addClass('hour col').text(schedule[i].time));
     var newText = schedule[i].appointment;
-    console.log(moment().format('H'))
     if (schedule[i].milTime == moment().format('H')){ 
-        console.log("test")
         timeIs = "present";
     } else if (schedule[i].milTime < moment().format('H')){
         timeIs ="past";
@@ -97,47 +87,55 @@ $('#reset-button').click(function(){
     schedule = [
         {
             time: "8am",
+            milTime: 8,
             appointment: "",
         },
         {
             time: "9am",
+            milTime: 9,
             appointment: "",
         },
         {
             time: "10am",
+            milTime: 10,
             appointment: "",
         },
         {
             time: "11am",
+            milTime: 11,
             appointment: "",
         },
         {
             time: "12pm",
+            milTime: 12,
             appointment: "",
         },
         {
             time: "1pm",
+            milTime: 13,
             appointment: "",
         },
         {
             time: "2pm",
+            milTime: 14,
             appointment: "",
         },
         {
             time: "3pm",
+            milTime: 15,
             appointment: "",
         },
         {
             time: "4pm",
+            milTime: 16,
             appointment: "",
         },
         {
             time: "5pm",
+            milTime: 17,
             appointment: "",
         }
     ];
     localStorage.setItem('savedSchedule', JSON.stringify(schedule));
     location = location;
 })
-
-$("#currentDay").text(moment().format('dddd, MMMM Do, YYYY'))
