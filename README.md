@@ -16,7 +16,7 @@ Using the data from moment.js, the page will color code each row's input area (g
 
 When the user types in an appointment in the input area and then clicks the save icon, the appointment will then stored in local storage to persit between sessions. 
 
-On the button of the page are buttons. One will save the contents of every input area and the other will clear the list of appointments. 
+On the bottom of the page are two buttons, one will save the contents of every input area and the other will clear the list of appointments. 
 
 ![page-display](./assets/img/page.PNG)
 
