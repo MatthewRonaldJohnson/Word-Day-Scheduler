@@ -28,11 +28,18 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
+    <div class="container" id="timeblock-container">
       <!-- Timeblocks go here -->
     </div>
 
-    <button id="reset-button" class="btn btn-danger">Reset</button>
+    <br>
+  
+    <div class="container">
+      <div class="row justify-content-between">
+        <button id="save-button" class="btn btn-primary col-1 custom-btn">💾 All</button>
+        <button id="reset-button" class="btn btn-danger col-1 custom-btn">Reset</button>
+      </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

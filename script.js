@@ -1,4 +1,4 @@
-var $container = $('.container');
+var $container = $('#timeblock-container');
 //grabs saved schedule from local storage, or creates a new empty schedule
 var schedule = JSON.parse(localStorage.getItem('savedSchedule')) || [
     {
@@ -72,9 +72,9 @@ for (let i = 0; i < schedule.length; i++) {
     newRow.append($("<button>").addClass('saveBtn col').text("💾").attr('data-index', i));
 }
 
-$container.on('click', '.saveBtn', function(e){
-    var saved = $(e.target).siblings().eq(1).val();
-    correctIndex = $(e.target).attr('data-index');
+$container.on('click', '.saveBtn', function(){
+    var saved = $(this).siblings().eq(1).val();
+    var correctIndex = $(this).attr('data-index');
     schedule[correctIndex].appointment = saved;
     localStorage.setItem('savedSchedule', JSON.stringify(schedule))
 })
@@ -134,4 +134,12 @@ $('#reset-button').click(function(){
     ];
     localStorage.setItem('savedSchedule', JSON.stringify(schedule));
     location = location;
+})
+
+$('#save-button').click(function(){
+     var timeBlocks = $('.time-block');
+     for (let i = 0; i < timeBlocks.length; i++) {
+         schedule[i].appointment = timeBlocks[i].value;
+     }
+     localStorage.setItem('savedSchedule', JSON.stringify(schedule));
 })
