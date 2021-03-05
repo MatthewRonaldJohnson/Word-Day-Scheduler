@@ -68,7 +68,7 @@ for (let i = 0; i < schedule.length; i++) {
     } else {
         timeIs = 'future';
     }
-    newRow.append($("<input>").addClass('time-block col-9 ' + timeIs).attr('type', 'text').attr("value", newText));
+    newRow.append($("<input>").addClass('time-block col-8 col-md-10 ' + timeIs).attr('type', 'text').attr("value", newText));
     newRow.append($("<button>").addClass('saveBtn col').text("💾").attr('data-index', i));
     
     // if (newText === undefined){
