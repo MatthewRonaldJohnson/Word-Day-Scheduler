@@ -1,5 +1,6 @@
 # Work-Day-Scheduler
-Homework 5: Work Day Scheduler using JQuery and Moment.js
+
+Work Day Scheduler using Moment.js.
 
 Link to the deployed page [here](https://matthewronaldjohnson.github.io/Work-Day-Scheduler/)
 
@@ -19,9 +20,3 @@ When the user types in an appointment in the input area and then clicks the save
 On the bottom of the page are two buttons, one will save the contents of every input area and the other will clear the list of appointments. 
 
 ![page-display](./assets/img/page.PNG)
-
-## Resources 
-
-bootstrap docs on layout grids [link](https://getbootstrap.com/docs/4.5/layout/grid/)
-
-MDN Doc on data attributes [link](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)
